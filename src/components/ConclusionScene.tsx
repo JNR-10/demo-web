@@ -45,8 +45,9 @@ export default function ConclusionScene({ onRestart }: ConclusionSceneProps) {
       </div>
 
       <div className="reveal d6" style={{ marginTop: '3rem', fontFamily: 'var(--font-mono-family)', fontSize: '0.65rem', color: 'var(--text-muted)', opacity: '0.5' }}>
-        Canva Global Content Swarm Orchestrator • Built with Next.js & Vanilla CSS
+        Canva Global Content Swarm Orchestrator • Deployed on Render • Powered by Tigris, Opsera & InsForge
       </div>
+
     </>
   );
 }

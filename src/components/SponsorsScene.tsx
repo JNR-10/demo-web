@@ -9,34 +9,33 @@ export default function SponsorsScene({ onScrollNext }: SponsorsSceneProps) {
     <>
       <div className="kicker reveal d1">03 // ECOSYSTEM INTEGRATION</div>
       <h2 className="heading-serif reveal d2" style={{ marginBottom: '0.25rem', fontSize: '2.5rem' }}>
-        Opsera & InsForge
+        Opsera, InsForge & Render
       </h2>
       <p className="body-text reveal d3" style={{ fontSize: '0.85rem', marginBottom: '1.5rem', maxWidth: '850px' }}>
-        To coordinate autonomous agent swarms safely in production, our pipeline integrates pre-flight safety audits and real-time state machines.
+        To coordinate autonomous agent swarms safely in production, our pipeline integrates script auditing, state synchronization, and high-availability hosting.
       </p>
 
-      {/* Side-by-Side Sponsors Info & Integration Code */}
+      {/* Grid of Sponsors */}
       <div 
         className="reveal d4" 
         style={{ 
           display: 'grid', 
           gridTemplateColumns: '1fr 1fr', 
-          gap: '2.5rem', 
+          gap: '1.5rem', 
           width: '100%', 
           maxWidth: '1050px',
           margin: '0.5rem 0'
         }}
       >
-        {/* Left Column: Opsera */}
+        {/* Column 1: Opsera */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
-          <div className="metric-card" style={{ gap: '0.25rem' }}>
+          <div className="metric-card" style={{ gap: '0.25rem', minHeight: '110px' }}>
             <div className="metric-label" style={{ color: 'var(--accent-primary)' }}>Governance & Compliance</div>
-            <h3 className="heading-serif" style={{ fontSize: '1.25rem', textAlign: 'left', margin: '0.2rem 0', background: 'none', WebkitTextFillColor: 'initial' }}>
+            <h3 className="heading-serif" style={{ fontSize: '1.15rem', textAlign: 'left', margin: '0.2rem 0', background: 'none', WebkitTextFillColor: 'initial' }}>
               Opsera Script Audit Gate
             </h3>
-            <p className="metric-desc" style={{ fontSize: '0.75rem', lineHeight: '1.4', margin: 0 }}>
-              Scans all subagent code, scripts, and campaign configurations before launch. 
-              Enforces regional policies (GDPR compliance for Germany, APPI compliance for Japan) and blocks insecure code execution.
+            <p className="metric-desc" style={{ fontSize: '0.7rem', lineHeight: '1.4', margin: 0 }}>
+              Scans all subagent code and campaign configs before execution. Enforces local policy check (GDPR for Germany, APPI for Japan) and blocks insecure shell prompts.
             </p>
           </div>
 
@@ -46,9 +45,9 @@ export default function SponsorsScene({ onScrollNext }: SponsorsSceneProps) {
               background: 'rgba(0,0,0,0.5)', 
               border: '1px solid rgba(255,255,255,0.05)', 
               borderRadius: '8px', 
-              padding: '1rem', 
+              padding: '0.85rem', 
               fontFamily: 'var(--font-mono-family)', 
-              fontSize: '0.7rem', 
+              fontSize: '0.68rem', 
               lineHeight: '1.4',
               color: '#c084fc',
               display: 'flex',
@@ -70,22 +69,18 @@ export default function SponsorsScene({ onScrollNext }: SponsorsSceneProps) {
               complianceRules: [<span style={{ color: '#e9d5ff' }}>"gdpr"</span>, <span style={{ color: '#e9d5ff' }}>"appi"</span>]
             </div>
             <div>{'});'}</div>
-            <div>
-              <span style={{ color: '#f472b6' }}>if</span> (!compliance.passed) {'{'} <span style={{ color: '#f472b6' }}>throw new</span> <span style={{ color: '#38bdf8' }}>Error</span>(compliance.reason); {'}'}
-            </div>
           </div>
         </div>
 
-        {/* Right Column: InsForge */}
+        {/* Column 2: InsForge */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
-          <div className="metric-card" style={{ gap: '0.25rem' }}>
-            <div className="metric-label" style={{ color: 'var(--accent-primary)' }}>State & Process Synchronization</div>
-            <h3 className="heading-serif" style={{ fontSize: '1.25rem', textAlign: 'left', margin: '0.2rem 0', background: 'none', WebkitTextFillColor: 'initial' }}>
-              InsForge State telemetry
+          <div className="metric-card" style={{ gap: '0.25rem', minHeight: '110px' }}>
+            <div className="metric-label" style={{ color: 'var(--accent-primary)' }}>State Synchronization</div>
+            <h3 className="heading-serif" style={{ fontSize: '1.15rem', textAlign: 'left', margin: '0.2rem 0', background: 'none', WebkitTextFillColor: 'initial' }}>
+              InsForge State Telemetry
             </h3>
-            <p className="metric-desc" style={{ fontSize: '0.75rem', lineHeight: '1.4', margin: 0 }}>
-              Acts as the system’s central state and log broker. 
-              Tracks running agent nodes via the Model Context Protocol (MCP), preserving execution timestamps, job results, and audit trails.
+            <p className="metric-desc" style={{ fontSize: '0.7rem', lineHeight: '1.4', margin: 0 }}>
+              Acts as the central state broker. Tracks running agent nodes via Model Context Protocol (MCP), preserving execution timestamps, job parameters, and audit trails.
             </p>
           </div>
 
@@ -95,9 +90,9 @@ export default function SponsorsScene({ onScrollNext }: SponsorsSceneProps) {
               background: 'rgba(0,0,0,0.5)', 
               border: '1px solid rgba(255,255,255,0.05)', 
               borderRadius: '8px', 
-              padding: '1rem', 
+              padding: '0.85rem', 
               fontFamily: 'var(--font-mono-family)', 
-              fontSize: '0.7rem', 
+              fontSize: '0.68rem', 
               lineHeight: '1.4',
               color: '#34d399',
               display: 'flex',
@@ -116,16 +111,22 @@ export default function SponsorsScene({ onScrollNext }: SponsorsSceneProps) {
               status: <span style={{ color: '#a7f3d0' }}>"processing"</span>,
             </div>
             <div style={{ paddingLeft: '1rem' }}>
-              agents: {'{'}
+              agents: {'{'} videoParent: <span style={{ color: '#a7f3d0' }}>"running"</span> {'}'}
             </div>
-            <div style={{ paddingLeft: '2rem' }}>
-              videoParent: <span style={{ color: '#a7f3d0' }}>"running"</span>,
-            </div>
-            <div style={{ paddingLeft: '2rem' }}>
-              audioParent: <span style={{ color: '#a7f3d0' }}>"running"</span>
-            </div>
-            <div style={{ paddingLeft: '1rem' }}>{'}'}</div>
             <div>{'});'}</div>
+          </div>
+        </div>
+
+        {/* Row 2: Render Deployment Host */}
+        <div style={{ gridColumn: 'span 2', display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
+          <div className="metric-card" style={{ gap: '0.25rem', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <div className="metric-label" style={{ color: 'var(--accent-tertiary)' }}>Infrastructure & Deployment</div>
+            <h3 className="heading-serif" style={{ fontSize: '1.15rem', textAlign: 'left', margin: '0.2rem 0', background: 'none', WebkitTextFillColor: 'initial' }}>
+              Render Webhook Host
+            </h3>
+            <p className="metric-desc" style={{ fontSize: '0.7rem', lineHeight: '1.4', margin: 0 }}>
+              Hosts our Express.js webhook listening engine. Render provides the server infrastructure, listening for Tigris S3 notifications and spawning orchestrators instantly with auto-scaling to manage high campaign throughput.
+            </p>
           </div>
         </div>
       </div>
