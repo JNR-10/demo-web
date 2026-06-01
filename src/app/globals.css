@@ -1,0 +1,173 @@
+:root {
+  --font-serif-family: var(--font-serif), Georgia, serif;
+  --font-sans-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-mono-family: var(--font-mono), monospace;
+
+  /* Premium Dark Theme Color Palette */
+  --bg-color: #06070b;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+  
+  --accent-primary: #8b5cf6;     /* Violet */
+  --accent-secondary: #06b6d4;   /* Cyan */
+  --accent-tertiary: #f59e0b;    /* Gold */
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-focus: rgba(255, 255, 255, 0.2);
+  --glass-glow: rgba(139, 92, 246, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+
+  --scroll-behavior-value: smooth;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll Snap Container (Deck) */
+.deck {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: var(--scroll-behavior-value);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide scrollbar by default for a clean presentation look */
+.deck::-webkit-scrollbar {
+  width: 6px;
+}
+.deck::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.deck::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+.deck::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Ambient Background Blobs */
+.background-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.12;
+}
+
+.blob-1 {
+  top: -10vh;
+  left: 10vw;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: float-blob-1 25s infinite alternate ease-in-out;
+}
+
+.blob-2 {
+  bottom: -15vh;
+  right: 5vw;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: float-blob-2 30s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+  top: 35vh;
+  left: 35vw;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: float-blob-3 22s infinite alternate ease-in-out;
+}
+
+/* Drift Keyframes */
+@keyframes float-blob-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(15vw, 10vh) scale(1.1);
+  }
+  66% {
+    transform: translate(-10vw, 25vh) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-blob-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-15vw, -20vh) scale(0.9);
+  }
+  66% {
+    transform: translate(10vw, -10vh) scale(1.15);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-blob-3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10vw, 15vh) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Accessibility: Reduced Motion Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --scroll-behavior-value: auto !important;
+  }
+  
+  .blob {
+    animation: none !important;
+    display: none !important;
+  }
+
+  .deck {
+    scroll-behavior: auto !important;
+  }
+}
